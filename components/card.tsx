@@ -7,7 +7,7 @@ interface CardProps {
   name: string;
   description: string;
   price: number;
-  imageUrl: string; // Add imageUrl prop
+  image_url: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -15,7 +15,7 @@ const Card: React.FC<CardProps> = ({
   name,
   description,
   price,
-  imageUrl,
+  image_url,
 }) => {
   return (
     <Link href={`/products/${id}`}>
@@ -23,8 +23,8 @@ const Card: React.FC<CardProps> = ({
         <div>
           <div className="relative h-96 bg-center ">
             <Image
-              // src={getImageUrl(imageUrl)}
-              src={imageUrl}
+              // src={getImageUrl(image_url)}
+              src={image_url}
               alt={name}
               fill={true}
               className="rounded-t"
