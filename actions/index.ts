@@ -50,7 +50,8 @@ export async function sellYourItemAction(prevState: any, formData: FormData) {
     };
   }
 
-  const { name, description, price, image_url, contact_email } = validatedFields.data;
+  const { name, description, price, image_url, contact_email } =
+    validatedFields.data;
 
   try {
     const fileName = `${Math.random()}-${image_url.name}`;

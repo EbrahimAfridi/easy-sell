@@ -1,5 +1,5 @@
 import { createClient } from "@/supabase/client";
-import { getCanonicalUrl, getImageUrl } from "@/utils";
+import { getImageUrl } from "@/utils";
 import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -12,7 +12,7 @@ type Props = {
 };
 
 export async function generateMetadata(
-  { params, searchParams }: Props,
+  { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const slug = params.slug;
@@ -35,7 +35,7 @@ export async function generateMetadata(
       images: [getImageUrl(post.image_url)],
     },
     alternates: {
-      canonical: `${getCanonicalUrl()}/products/${params.slug}`,
+      canonical: `/products/${params.slug}`,
     },
   };
 }

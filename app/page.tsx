@@ -12,7 +12,7 @@ export default async function Home() {
     .from("easysell-products")
     .select()
     .is("boost", true);
-    
+
   console.log({ products });
 
   if (!products) {
