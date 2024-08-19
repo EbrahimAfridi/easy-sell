@@ -69,7 +69,7 @@ const UploadFormPage: React.FC = () => {
           </div>
 
           <div className="mb-6">
-            <label htmlFor="image_url" className="block  mb-2">
+            <label htmlFor="image_url" className="block mb-2">
               Image
             </label>
             <input

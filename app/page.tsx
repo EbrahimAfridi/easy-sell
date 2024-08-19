@@ -1,5 +1,6 @@
 import Card from "@/components/card";
 import { createClient } from "@/supabase/client";
+import { getImageUrl } from "@/utils";
 import { notFound } from "next/navigation";
 
 export const revalidate = 0;
@@ -34,7 +35,7 @@ export default async function Home() {
                   id={item.id}
                   key={`${item.name}-${idx}`}
                   {...item}
-                  image_url={`${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/EASY-SELL-STORAGE/${item.image_url}`}
+                  image_url={getImageUrl(item.image_url)}
                 />
               ))}
           </div>
@@ -48,7 +49,7 @@ export default async function Home() {
                 id={item.id}
                 key={`${item.name}-${idx}`}
                 {...item}
-                image_url={`${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/EASY-SELL-STORAGE/${item.image_url}`}
+                image_url={getImageUrl(item.image_url)}
               />
             ))}
           </div>
